@@ -57,6 +57,9 @@ GEM
       thor (~> 0.14.6)
     guard-rspec (0.5.5)
       guard (>= 0.8.4)
+    guard-spork (0.3.2)
+      guard (>= 0.8.4)
+      spork (>= 0.8.4)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.3)
@@ -123,6 +126,7 @@ GEM
       ffi (~> 1.0)
       multi_json (~> 1.0)
       rubyzip
+    spork (0.9.0)
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -147,10 +151,12 @@ DEPENDENCIES
   coffee-rails (~> 3.2.2)
   growl (= 1.0.3)
   guard-rspec (= 0.5.5)
+  guard-spork (= 0.3.2)
   jquery-rails
   pg (= 0.12.2)
   rails (= 3.2.3)
   rb-fsevent
   rspec-rails (= 2.9.0)
   sass-rails (~> 3.2.4)
+  spork (= 0.9.0)
   uglifier (>= 1.2.3)

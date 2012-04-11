@@ -22,5 +22,7 @@ gem 'jquery-rails'
 group :test do
   gem 'capybara', '1.1.2'
   gem 'growl', '1.0.3'
+  gem 'guard-spork', '0.3.2'
   gem 'rb-fsevent'
+  gem 'spork', '0.9.0'
 end

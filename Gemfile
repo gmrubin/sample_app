@@ -1,9 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-gem 'bootstrap-sass', '2.0.0'
+
 gem 'bcrypt-ruby', '3.0.1'
+gem 'bootstrap-sass', '2.0.0'
+gem 'bootstrap-will_paginate', '0.0.5'
+gem 'faker', '1.0.1'
 gem 'pg', '0.12.2'
+gem 'will_paginate', '3.0.3'
 
 group :development, :test do
   gem 'annotate', '~> 2.4.1.beta'

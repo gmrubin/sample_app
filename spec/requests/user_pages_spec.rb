@@ -33,7 +33,8 @@ describe "UserPages" do
 
       it { should have_selector('title', text: 'Sign up') }
       it { should have_content('error') }
-      it { should have_selector('div', class: "alert alert-error") }
+      it { should have_selector('div.alert.alert-error'), text: 'Invalid' }
+      # it { should have_error_message('Invalid') }
     end
   end
 

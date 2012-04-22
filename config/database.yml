@@ -5,8 +5,11 @@ development: &development
 production:
   <<: *development
 
-test:
+test: &test
   adapter: postgresql
   database: sampe_app_test
   min_messages: warning
 
+
+cucumber:
+  <<: *test

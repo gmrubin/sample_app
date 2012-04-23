@@ -12,12 +12,18 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    if signed_in?
+      redirect_to root_path
+    else
+      @user = User.new
+    end
   end
 
   def create
     @user = User.new(params[:user])
-    if @user.save
+    if signed_in?
+      redirect_to root_path
+    elsif @user.save
       sign_in @user
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
@@ -27,8 +33,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User destroyed."
+    user = User.find(params[:id])
+    if current_user?(user)
+      flash[:error] = "Invalid action, cannot destroy yourself!"
+    else
+      user.destroy
+      flash[:success] = "User destroyed."
+    end
     redirect_to users_path
   end
 

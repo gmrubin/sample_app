@@ -1,4 +1,5 @@
 require 'spec_helper'
+include ActionView::Helpers::TextHelper
 
 describe "Static pages" do
 
@@ -32,6 +33,22 @@ describe "Static pages" do
           page.should have_selector("li##{item.id}", text: item.content)
         end
       end
+
+      it "should have a sidebar" do
+        page.should have_link('view my profile', href: user_path(user) )
+        page.should have_content(user.feed.count)
+        page.should have_content(pluralize(user.feed.count, 'micropost'))
+      end
+
+      # it "should paginate the microposts" do
+        # page.should have_selector("div", "pagination")
+        # page.should have_selector("span.disabled", :content => "Previous")
+        # page.should have_selector("a", :href => "/users/1?page=2",
+                                      # :content => "2")
+        # page.should have_selector("a", :href => "/users/1?page=2",
+                                      # :content => "Next")
+      # end
+
     end
   end
 
